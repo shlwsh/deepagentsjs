@@ -6,5 +6,18 @@
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "sqltools.connections": [
+    {
+      "ssh": "Disabled",
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "driver": "PostgreSQL",
+      "name": "agentdb",
+      "database": "agentdb",
+      "username": "postgres",
+      "password": "postgres"
+    }
+  ]
 }
