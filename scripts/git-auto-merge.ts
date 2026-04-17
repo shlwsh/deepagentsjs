@@ -6,7 +6,7 @@
 import { execSync } from "child_process";
 import * as fs from "fs";
 import * as path from "path";
-import { logger } from "../packages/agent-service/src/config/index";
+import { logger } from "./shim";
 import { resolveConflict } from "./conflict-resolver";
 import {
     getConflictedFiles,

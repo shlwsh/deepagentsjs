@@ -7,8 +7,11 @@
       "devDependencies": {
         "@changesets/changelog-github": "^0.6.0",
         "@changesets/cli": "^2.29.8",
+        "@langchain/core": "^1.1.40",
+        "@langchain/openai": "^1.4.4",
         "@tsconfig/recommended": "^1.0.13",
         "concurrently": "^9.2.1",
+        "dotenv": "^17.4.2",
         "eslint-plugin-no-instanceof": "^1.0.1",
         "globals": "^17.3.0",
         "jiti": "^2.6.1",
@@ -885,7 +888,7 @@
 
     "@langchain/node-vfs": ["@langchain/node-vfs@workspace:libs/providers/node-vfs"],
 
-    "@langchain/openai": ["@langchain/openai@0.5.18", "", { "dependencies": { "js-tiktoken": "^1.0.12", "openai": "^5.3.0", "zod": "^3.25.32" }, "peerDependencies": { "@langchain/core": ">=0.3.58 <0.4.0" } }, "sha512-CX1kOTbT5xVFNdtLjnM0GIYNf+P7oMSu+dGCFxxWRa3dZwWiuyuBXCm+dToUGxDLnsHuV1bKBtIzrY1mLq/A1Q=="],
+    "@langchain/openai": ["@langchain/openai@1.4.4", "", { "dependencies": { "js-tiktoken": "^1.0.12", "openai": "^6.32.0", "zod": "^3.25.76 || ^4" }, "peerDependencies": { "@langchain/core": "^1.1.39" } }, "sha512-mRr/X5rvlwPj6cSXPxbL+CtOqYANO1/+CQ3Z+5t48kWnrlgPYOazmA+UAWvqQOuwJ6LaYn3SFrt43rR4lte/Ow=="],
 
     "@langchain/quickjs": ["@langchain/quickjs@workspace:libs/providers/quickjs"],
 
@@ -1511,7 +1514,7 @@
 
     "dir-glob": ["dir-glob@3.0.1", "", { "dependencies": { "path-type": "4.0.0" } }, "sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA=="],
 
-    "dotenv": ["dotenv@16.6.1", "", {}, "sha512-uBq4egWHTcTt33a72vpSG0z3HnPuIl6NqYcTrKEg2azoEyl2hpW0zqlxysq2pK9HlDIHyHyakeYaYnSAwd8bow=="],
+    "dotenv": ["dotenv@17.4.2", "", {}, "sha512-nI4U3TottKAcAD9LLud4Cb7b2QztQMUEfHbvhTH09bqXTxnSie8WnjPALV/WMCrJZ6UV/qHJ6L03OqO3LcdYZw=="],
 
     "dts-resolver": ["dts-resolver@2.1.3", "", {}, "sha512-bihc7jPC90VrosXNzK0LTE2cuLP6jr0Ro8jk+kMugHReJVLIpHz/xadeq3MhuwyO4TD4OA3L1Q8pBBFRc08Tsw=="],
 
@@ -1551,7 +1554,7 @@
 
     "estree-walker": ["estree-walker@3.0.3", "", { "dependencies": { "@types/estree": "1.0.8" } }, "sha512-7RUKfXgSMMkzt6ZuXmqapOurLGPPfgj6l9uRZ7lRGolvk0y2yocc35LdcxKC5PQZdn2DMqioAQ2NoWcrTKmm6g=="],
 
-    "eventemitter3": ["eventemitter3@5.0.4", "", {}, "sha512-mlsTRyGaPBjPedk6Bvw+aqbsXDtoAyAzm5MO7JgU+yVRyMQ5O8bD4Kcci7BS85f93veegeCPkL8R4GLClnjLFw=="],
+    "eventemitter3": ["eventemitter3@4.0.7", "", {}, "sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw=="],
 
     "events": ["events@3.3.0", "", {}, "sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q=="],
 
@@ -1803,7 +1806,7 @@
 
     "onetime": ["onetime@7.0.0", "", { "dependencies": { "mimic-function": "5.0.1" } }, "sha512-VXJjc87FScF88uafS3JllDgvAm+c/Slfz06lorj2uAY34rlUu0Nt+v8wreiImcrgAjjIHp1rXpTDlLOGw29WwQ=="],
 
-    "openai": ["openai@5.23.2", "", { "peerDependencies": { "ws": "^8.18.0", "zod": "^3.23.8" }, "optionalPeers": ["ws", "zod"], "bin": { "openai": "bin/cli" } }, "sha512-MQBzmTulj+MM5O8SKEk/gL8a7s5mktS9zUtAkU257WjvobGc9nKcBuVwjyEEcb9SI8a8Y2G/mzn3vm9n1Jlleg=="],
+    "openai": ["openai@6.33.0", "", { "optionalDependencies": { "ws": "8.19.0", "zod": "4.3.6" }, "bin": { "openai": "bin/cli" } }, "sha512-xAYN1W3YsDXJWA5F277135YfkEk6H7D3D6vWwRhJ3OEkzRgcyK8z/P5P9Gyi/wB4N8kK9kM5ZjprfvyHagKmpw=="],
 
     "outdent": ["outdent@0.5.0", "", {}, "sha512-/jHxFIzoMXdqPzTaCpFzAAWhpkSjZPF4Vsn6jAfNpmbH/ymsmd7Qc6VE9BGn0L6YMj6uwpQLxCECpus4ukKS9Q=="],
 
@@ -2133,6 +2136,10 @@
 
     "@daytonaio/sdk/dotenv": ["dotenv@17.3.1", "", {}, "sha512-IO8C/dzEb6O3F9/twg6ZLXz164a2fhTnEWb95H23Dm4OuN+92NmEAlTrupP9VW6Jm3sO26tQlqyvyi4CsnY9GA=="],
 
+    "@deepagents/agent-platform/@langchain/openai": ["@langchain/openai@0.5.18", "", { "dependencies": { "js-tiktoken": "^1.0.12", "openai": "^5.3.0", "zod": "^3.25.32" }, "peerDependencies": { "@langchain/core": ">=0.3.58 <0.4.0" } }, "sha512-CX1kOTbT5xVFNdtLjnM0GIYNf+P7oMSu+dGCFxxWRa3dZwWiuyuBXCm+dToUGxDLnsHuV1bKBtIzrY1mLq/A1Q=="],
+
+    "@deepagents/agent-platform/dotenv": ["dotenv@16.6.1", "", {}, "sha512-uBq4egWHTcTt33a72vpSG0z3HnPuIl6NqYcTrKEg2azoEyl2hpW0zqlxysq2pK9HlDIHyHyakeYaYnSAwd8bow=="],
+
     "@deepagents/eval-all/zod": ["zod@4.3.6", "", {}, "sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg=="],
 
     "@deepagents/eval-hitl/zod": ["zod@4.3.6", "", {}, "sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg=="],
@@ -2161,29 +2168,19 @@
 
     "@inquirer/external-editor/@types/node": ["@types/node@25.5.0", "", { "dependencies": { "undici-types": "7.18.2" } }, "sha512-jp2P3tQMSxWugkCUKLRPVUpGaL5MVFwF8RDuSRztfwgN1wmqJeMSbKlnEtQqU8UrhTmzEmZdu2I6v2dpp7XIxw=="],
 
-    "@langchain/anthropic/@langchain/core": ["@langchain/core@1.1.38", "", { "dependencies": { "@cfworker/json-schema": "4.1.1", "@standard-schema/spec": "1.1.0", "ansi-styles": "5.2.0", "camelcase": "6.3.0", "decamelize": "1.2.0", "js-tiktoken": "1.0.21", "langsmith": "0.5.19", "mustache": "4.2.0", "p-queue": "6.6.2", "uuid": "11.1.0", "zod": "4.3.6" } }, "sha512-C340wH1YL10CiVOFlEpQMp0zQE85/eBLKX/gi1Lv7shAyUmR3CQ0t/mXlCd5RsZa6ntAN1kDJnp64ArWey9XAA=="],
-
     "@langchain/anthropic/zod": ["zod@4.3.6", "", {}, "sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg=="],
 
     "@langchain/core/zod": ["zod@4.3.6", "", {}, "sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg=="],
 
     "@langchain/daytona/@types/node": ["@types/node@25.5.0", "", { "dependencies": { "undici-types": "7.18.2" } }, "sha512-jp2P3tQMSxWugkCUKLRPVUpGaL5MVFwF8RDuSRztfwgN1wmqJeMSbKlnEtQqU8UrhTmzEmZdu2I6v2dpp7XIxw=="],
 
-    "@langchain/daytona/dotenv": ["dotenv@17.3.1", "", {}, "sha512-IO8C/dzEb6O3F9/twg6ZLXz164a2fhTnEWb95H23Dm4OuN+92NmEAlTrupP9VW6Jm3sO26tQlqyvyi4CsnY9GA=="],
-
     "@langchain/deno/@types/node": ["@types/node@25.5.0", "", { "dependencies": { "undici-types": "7.18.2" } }, "sha512-jp2P3tQMSxWugkCUKLRPVUpGaL5MVFwF8RDuSRztfwgN1wmqJeMSbKlnEtQqU8UrhTmzEmZdu2I6v2dpp7XIxw=="],
-
-    "@langchain/deno/dotenv": ["dotenv@17.3.1", "", {}, "sha512-IO8C/dzEb6O3F9/twg6ZLXz164a2fhTnEWb95H23Dm4OuN+92NmEAlTrupP9VW6Jm3sO26tQlqyvyi4CsnY9GA=="],
-
-    "@langchain/langgraph/@langchain/core": ["@langchain/core@1.1.38", "", { "dependencies": { "@cfworker/json-schema": "4.1.1", "@standard-schema/spec": "1.1.0", "ansi-styles": "5.2.0", "camelcase": "6.3.0", "decamelize": "1.2.0", "js-tiktoken": "1.0.21", "langsmith": "0.5.19", "mustache": "4.2.0", "p-queue": "6.6.2", "uuid": "11.1.0", "zod": "4.3.6" } }, "sha512-C340wH1YL10CiVOFlEpQMp0zQE85/eBLKX/gi1Lv7shAyUmR3CQ0t/mXlCd5RsZa6ntAN1kDJnp64ArWey9XAA=="],
 
     "@langchain/langgraph/@langchain/langgraph-sdk": ["@langchain/langgraph-sdk@1.8.8", "", { "dependencies": { "@types/json-schema": "7.0.15", "p-queue": "9.1.2", "p-retry": "7.1.1", "uuid": "13.0.0" }, "optionalDependencies": { "@langchain/core": "1.1.38", "react": "19.2.4", "react-dom": "19.2.4" } }, "sha512-4OoqFAvPloOTZ6oPxXbJngz4FLJO8QSXb+BQV3qvNTvmfu1LQA7cCEqSNLYX9MoC340PbnDkHNgUtjajwkDHRg=="],
 
     "@langchain/langgraph/uuid": ["uuid@10.0.0", "", { "bin": { "uuid": "dist/bin/uuid" } }, "sha512-8XkAphELsDnEGrDxUOHB3RGvXz6TeuYSGEZBOjtTtPm2lwhGBjLgOzLHB63IUWfBpNucQjND6d3AOudO+H3RWQ=="],
 
     "@langchain/langgraph/zod": ["zod@4.3.6", "", {}, "sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg=="],
-
-    "@langchain/langgraph-checkpoint/@langchain/core": ["@langchain/core@1.1.38", "", { "dependencies": { "@cfworker/json-schema": "4.1.1", "@standard-schema/spec": "1.1.0", "ansi-styles": "5.2.0", "camelcase": "6.3.0", "decamelize": "1.2.0", "js-tiktoken": "1.0.21", "langsmith": "0.5.19", "mustache": "4.2.0", "p-queue": "6.6.2", "uuid": "11.1.0", "zod": "4.3.6" } }, "sha512-C340wH1YL10CiVOFlEpQMp0zQE85/eBLKX/gi1Lv7shAyUmR3CQ0t/mXlCd5RsZa6ntAN1kDJnp64ArWey9XAA=="],
 
     "@langchain/langgraph-checkpoint/uuid": ["uuid@10.0.0", "", { "bin": { "uuid": "dist/bin/uuid" } }, "sha512-8XkAphELsDnEGrDxUOHB3RGvXz6TeuYSGEZBOjtTtPm2lwhGBjLgOzLHB63IUWfBpNucQjND6d3AOudO+H3RWQ=="],
 
@@ -2195,21 +2192,15 @@
 
     "@langchain/modal/@types/node": ["@types/node@25.5.0", "", { "dependencies": { "undici-types": "7.18.2" } }, "sha512-jp2P3tQMSxWugkCUKLRPVUpGaL5MVFwF8RDuSRztfwgN1wmqJeMSbKlnEtQqU8UrhTmzEmZdu2I6v2dpp7XIxw=="],
 
-    "@langchain/modal/dotenv": ["dotenv@17.3.1", "", {}, "sha512-IO8C/dzEb6O3F9/twg6ZLXz164a2fhTnEWb95H23Dm4OuN+92NmEAlTrupP9VW6Jm3sO26tQlqyvyi4CsnY9GA=="],
-
     "@langchain/node-vfs/@types/node": ["@types/node@25.5.0", "", { "dependencies": { "undici-types": "7.18.2" } }, "sha512-jp2P3tQMSxWugkCUKLRPVUpGaL5MVFwF8RDuSRztfwgN1wmqJeMSbKlnEtQqU8UrhTmzEmZdu2I6v2dpp7XIxw=="],
 
-    "@langchain/openai/@langchain/core": ["@langchain/core@1.1.38", "", { "dependencies": { "@cfworker/json-schema": "4.1.1", "@standard-schema/spec": "1.1.0", "ansi-styles": "5.2.0", "camelcase": "6.3.0", "decamelize": "1.2.0", "js-tiktoken": "1.0.21", "langsmith": "0.5.19", "mustache": "4.2.0", "p-queue": "6.6.2", "uuid": "11.1.0", "zod": "4.3.6" } }, "sha512-C340wH1YL10CiVOFlEpQMp0zQE85/eBLKX/gi1Lv7shAyUmR3CQ0t/mXlCd5RsZa6ntAN1kDJnp64ArWey9XAA=="],
+    "@langchain/openai/zod": ["zod@4.3.6", "", {}, "sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg=="],
 
     "@langchain/quickjs/@types/node": ["@types/node@25.5.0", "", { "dependencies": { "undici-types": "7.18.2" } }, "sha512-jp2P3tQMSxWugkCUKLRPVUpGaL5MVFwF8RDuSRztfwgN1wmqJeMSbKlnEtQqU8UrhTmzEmZdu2I6v2dpp7XIxw=="],
-
-    "@langchain/quickjs/dotenv": ["dotenv@17.3.1", "", {}, "sha512-IO8C/dzEb6O3F9/twg6ZLXz164a2fhTnEWb95H23Dm4OuN+92NmEAlTrupP9VW6Jm3sO26tQlqyvyi4CsnY9GA=="],
 
     "@langchain/quickjs/zod": ["zod@4.3.6", "", {}, "sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg=="],
 
     "@langchain/sandbox-standard-tests/@types/node": ["@types/node@25.5.0", "", { "dependencies": { "undici-types": "7.18.2" } }, "sha512-jp2P3tQMSxWugkCUKLRPVUpGaL5MVFwF8RDuSRztfwgN1wmqJeMSbKlnEtQqU8UrhTmzEmZdu2I6v2dpp7XIxw=="],
-
-    "@langchain/tavily/@langchain/core": ["@langchain/core@1.1.38", "", { "dependencies": { "@cfworker/json-schema": "4.1.1", "@standard-schema/spec": "1.1.0", "ansi-styles": "5.2.0", "camelcase": "6.3.0", "decamelize": "1.2.0", "js-tiktoken": "1.0.21", "langsmith": "0.5.19", "mustache": "4.2.0", "p-queue": "6.6.2", "uuid": "11.1.0", "zod": "4.3.6" } }, "sha512-C340wH1YL10CiVOFlEpQMp0zQE85/eBLKX/gi1Lv7shAyUmR3CQ0t/mXlCd5RsZa6ntAN1kDJnp64ArWey9XAA=="],
 
     "@langchain/tavily/zod": ["zod@4.3.6", "", {}, "sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg=="],
 
@@ -2299,11 +2290,7 @@
 
     "deepagents/@langchain/langgraph-sdk": ["@langchain/langgraph-sdk@1.8.8", "", { "dependencies": { "@types/json-schema": "7.0.15", "p-queue": "9.1.2", "p-retry": "7.1.1", "uuid": "13.0.0" }, "optionalDependencies": { "@langchain/core": "1.1.38", "react": "19.2.4", "react-dom": "19.2.4" } }, "sha512-4OoqFAvPloOTZ6oPxXbJngz4FLJO8QSXb+BQV3qvNTvmfu1LQA7cCEqSNLYX9MoC340PbnDkHNgUtjajwkDHRg=="],
 
-    "deepagents/@langchain/openai": ["@langchain/openai@1.4.1", "", { "dependencies": { "js-tiktoken": "1.0.21", "openai": "6.33.0", "zod": "4.3.6" }, "peerDependencies": { "@langchain/core": "1.1.38" } }, "sha512-jaHk4TnLqWrQ1KYmavvwCImW6x8pBy6LLTK73tzSMg7HBLbq0g/l7EkpMcxZWDOvyufuCXUqO2bj47apcOhw6Q=="],
-
     "deepagents/@types/node": ["@types/node@25.5.0", "", { "dependencies": { "undici-types": "7.18.2" } }, "sha512-jp2P3tQMSxWugkCUKLRPVUpGaL5MVFwF8RDuSRztfwgN1wmqJeMSbKlnEtQqU8UrhTmzEmZdu2I6v2dpp7XIxw=="],
-
-    "deepagents/dotenv": ["dotenv@17.3.1", "", {}, "sha512-IO8C/dzEb6O3F9/twg6ZLXz164a2fhTnEWb95H23Dm4OuN+92NmEAlTrupP9VW6Jm3sO26tQlqyvyi4CsnY9GA=="],
 
     "deepagents/zod": ["zod@4.3.6", "", {}, "sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg=="],
 
@@ -2327,13 +2314,11 @@
 
     "json-schema-to-ts/@babel/runtime": ["@babel/runtime@7.29.2", "", {}, "sha512-JiDShH45zKHWyGe4ZNVRrCjBz8Nh9TMmZG1kh4QTK8hCBTWBi8Da+i7s1fJw7/lYpM4ccepSNfqzZ/QvABBi5g=="],
 
-    "langchain/@langchain/core": ["@langchain/core@1.1.38", "", { "dependencies": { "@cfworker/json-schema": "4.1.1", "@standard-schema/spec": "1.1.0", "ansi-styles": "5.2.0", "camelcase": "6.3.0", "decamelize": "1.2.0", "js-tiktoken": "1.0.21", "langsmith": "0.5.19", "mustache": "4.2.0", "p-queue": "6.6.2", "uuid": "11.1.0", "zod": "4.3.6" } }, "sha512-C340wH1YL10CiVOFlEpQMp0zQE85/eBLKX/gi1Lv7shAyUmR3CQ0t/mXlCd5RsZa6ntAN1kDJnp64ArWey9XAA=="],
-
     "langchain/zod": ["zod@4.3.6", "", {}, "sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg=="],
 
-    "langsmith/openai": ["openai@6.33.0", "", { "optionalDependencies": { "ws": "8.19.0", "zod": "4.3.6" }, "bin": { "openai": "bin/cli" } }, "sha512-xAYN1W3YsDXJWA5F277135YfkEk6H7D3D6vWwRhJ3OEkzRgcyK8z/P5P9Gyi/wB4N8kK9kM5ZjprfvyHagKmpw=="],
-
     "langsmith/uuid": ["uuid@10.0.0", "", { "bin": { "uuid": "dist/bin/uuid" } }, "sha512-8XkAphELsDnEGrDxUOHB3RGvXz6TeuYSGEZBOjtTtPm2lwhGBjLgOzLHB63IUWfBpNucQjND6d3AOudO+H3RWQ=="],
+
+    "listr2/eventemitter3": ["eventemitter3@5.0.4", "", {}, "sha512-mlsTRyGaPBjPedk6Bvw+aqbsXDtoAyAzm5MO7JgU+yVRyMQ5O8bD4Kcci7BS85f93veegeCPkL8R4GLClnjLFw=="],
 
     "log-update/slice-ansi": ["slice-ansi@7.1.2", "", { "dependencies": { "ansi-styles": "6.2.3", "is-fullwidth-code-point": "5.1.0" } }, "sha512-iOBWFgUX7caIZiuutICxVgX1SdxwAVFFKwt1EvMYYec/NWO5meOJ6K5uQxhrYBdQJne4KxiqZc+KptFOWFSI9w=="],
 
@@ -2347,7 +2332,7 @@
 
     "micromatch/picomatch": ["picomatch@2.3.2", "", {}, "sha512-V7+vQEJ06Z+c5tSye8S+nHUfI51xoXIXjHQ99cQtKUkQqqO1kO/KCJUfZXuB47h/YBlDhah2H3hdUGXn8ie0oA=="],
 
-    "p-queue/eventemitter3": ["eventemitter3@4.0.7", "", {}, "sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw=="],
+    "openai/zod": ["zod@4.3.6", "", {}, "sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg=="],
 
     "parallel-research/@langchain/core": ["@langchain/core@1.1.38", "", { "dependencies": { "@cfworker/json-schema": "4.1.1", "@standard-schema/spec": "1.1.0", "ansi-styles": "5.2.0", "camelcase": "6.3.0", "decamelize": "1.2.0", "js-tiktoken": "1.0.21", "langsmith": "0.5.19", "mustache": "4.2.0", "p-queue": "6.6.2", "uuid": "11.1.0", "zod": "4.3.6" } }, "sha512-C340wH1YL10CiVOFlEpQMp0zQE85/eBLKX/gi1Lv7shAyUmR3CQ0t/mXlCd5RsZa6ntAN1kDJnp64ArWey9XAA=="],
 
@@ -2409,13 +2394,13 @@
 
     "@babel/traverse/@babel/types/@babel/helper-validator-identifier": ["@babel/helper-validator-identifier@7.28.5", "", {}, "sha512-qSs4ifwzKJSV39ucNjsvc6WVHs6b7S03sOh2OcHF9UHfVPqWWALUsNUVzhSBiItjRZoLHx7nIarVjqKVusUZ1Q=="],
 
+    "@deepagents/agent-platform/@langchain/openai/openai": ["openai@5.23.2", "", { "peerDependencies": { "ws": "^8.18.0", "zod": "^3.23.8" }, "optionalPeers": ["ws", "zod"], "bin": { "openai": "bin/cli" } }, "sha512-MQBzmTulj+MM5O8SKEk/gL8a7s5mktS9zUtAkU257WjvobGc9nKcBuVwjyEEcb9SI8a8Y2G/mzn3vm9n1Jlleg=="],
+
     "@deepagents/eval-oolong/@types/node/undici-types": ["undici-types@7.18.2", "", {}, "sha512-AsuCzffGHJybSaRrmr5eHr81mwJU3kjw6M+uprWvCXiNeN9SOGwQ3Jn8jb8m3Z6izVgknn1R0FTCEAP2QrLY/w=="],
 
     "@deepagents/evals/@langchain/core/uuid": ["uuid@11.1.0", "", { "bin": { "uuid": "dist/esm/bin/uuid" } }, "sha512-0/A9rDy9P7cJ+8w1c9WD9V//9Wj15Ce2MPz8Ri6032usz+NfePxx5AcN3bN+r6ZL6jEo066/yNYB3tn4pQEx+A=="],
 
     "@deepagents/evals/@langchain/core/zod": ["zod@4.3.6", "", {}, "sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg=="],
-
-    "@deepagents/evals/@langchain/openai/openai": ["openai@6.33.0", "", { "optionalDependencies": { "ws": "8.19.0", "zod": "4.3.6" }, "bin": { "openai": "bin/cli" } }, "sha512-xAYN1W3YsDXJWA5F277135YfkEk6H7D3D6vWwRhJ3OEkzRgcyK8z/P5P9Gyi/wB4N8kK9kM5ZjprfvyHagKmpw=="],
 
     "@deepagents/evals/@langchain/openai/zod": ["zod@4.3.6", "", {}, "sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg=="],
 
@@ -2429,19 +2414,17 @@
 
     "@langchain/deno/@types/node/undici-types": ["undici-types@7.18.2", "", {}, "sha512-AsuCzffGHJybSaRrmr5eHr81mwJU3kjw6M+uprWvCXiNeN9SOGwQ3Jn8jb8m3Z6izVgknn1R0FTCEAP2QrLY/w=="],
 
-    "@langchain/langgraph-checkpoint/@langchain/core/uuid": ["uuid@11.1.0", "", { "bin": { "uuid": "dist/esm/bin/uuid" } }, "sha512-0/A9rDy9P7cJ+8w1c9WD9V//9Wj15Ce2MPz8Ri6032usz+NfePxx5AcN3bN+r6ZL6jEo066/yNYB3tn4pQEx+A=="],
-
-    "@langchain/langgraph-checkpoint/@langchain/core/zod": ["zod@4.3.6", "", {}, "sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg=="],
-
     "@langchain/langgraph-sdk/@langchain/core/p-queue": ["p-queue@6.6.2", "", { "dependencies": { "eventemitter3": "4.0.7", "p-timeout": "3.2.0" } }, "sha512-RwFpb72c/BhQLEXIZ5K2e+AhgNVmIejGlTgiB9MzZ0e93GRvqZ7uSi0dvRF7/XIXDeNkra2fNHBxTyPDGySpjQ=="],
 
     "@langchain/langgraph-sdk/@langchain/core/uuid": ["uuid@11.1.0", "", { "bin": { "uuid": "dist/esm/bin/uuid" } }, "sha512-0/A9rDy9P7cJ+8w1c9WD9V//9Wj15Ce2MPz8Ri6032usz+NfePxx5AcN3bN+r6ZL6jEo066/yNYB3tn4pQEx+A=="],
 
     "@langchain/langgraph-sdk/@langchain/core/zod": ["zod@4.3.6", "", {}, "sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg=="],
 
+    "@langchain/langgraph-sdk/p-queue/eventemitter3": ["eventemitter3@5.0.4", "", {}, "sha512-mlsTRyGaPBjPedk6Bvw+aqbsXDtoAyAzm5MO7JgU+yVRyMQ5O8bD4Kcci7BS85f93veegeCPkL8R4GLClnjLFw=="],
+
     "@langchain/langgraph-sdk/p-queue/p-timeout": ["p-timeout@7.0.1", "", {}, "sha512-AxTM2wDGORHGEkPCt8yqxOTMgpfbEHqF51f/5fJCmwFC3C/zNcGT63SymH2ttOAaiIws2zVg4+izQCjrakcwHg=="],
 
-    "@langchain/langgraph/@langchain/core/uuid": ["uuid@11.1.0", "", { "bin": { "uuid": "dist/esm/bin/uuid" } }, "sha512-0/A9rDy9P7cJ+8w1c9WD9V//9Wj15Ce2MPz8Ri6032usz+NfePxx5AcN3bN+r6ZL6jEo066/yNYB3tn4pQEx+A=="],
+    "@langchain/langgraph/@langchain/langgraph-sdk/@langchain/core": ["@langchain/core@1.1.38", "", { "dependencies": { "@cfworker/json-schema": "4.1.1", "@standard-schema/spec": "1.1.0", "ansi-styles": "5.2.0", "camelcase": "6.3.0", "decamelize": "1.2.0", "js-tiktoken": "1.0.21", "langsmith": "0.5.19", "mustache": "4.2.0", "p-queue": "6.6.2", "uuid": "11.1.0", "zod": "4.3.6" } }, "sha512-C340wH1YL10CiVOFlEpQMp0zQE85/eBLKX/gi1Lv7shAyUmR3CQ0t/mXlCd5RsZa6ntAN1kDJnp64ArWey9XAA=="],
 
     "@langchain/langgraph/@langchain/langgraph-sdk/p-queue": ["p-queue@9.1.2", "", { "dependencies": { "eventemitter3": "5.0.4", "p-timeout": "7.0.1" } }, "sha512-ktsDOALzTYTWWF1PbkNVg2rOt+HaOaMWJMUnt7T3qf5tvZ1L8dBW3tObzprBcXNMKkwj+yFSLqHso0x+UFcJXw=="],
 
@@ -2450,8 +2433,6 @@
     "@langchain/modal/@types/node/undici-types": ["undici-types@7.18.2", "", {}, "sha512-AsuCzffGHJybSaRrmr5eHr81mwJU3kjw6M+uprWvCXiNeN9SOGwQ3Jn8jb8m3Z6izVgknn1R0FTCEAP2QrLY/w=="],
 
     "@langchain/node-vfs/@types/node/undici-types": ["undici-types@7.18.2", "", {}, "sha512-AsuCzffGHJybSaRrmr5eHr81mwJU3kjw6M+uprWvCXiNeN9SOGwQ3Jn8jb8m3Z6izVgknn1R0FTCEAP2QrLY/w=="],
-
-    "@langchain/openai/@langchain/core/zod": ["zod@4.3.6", "", {}, "sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg=="],
 
     "@langchain/quickjs/@types/node/undici-types": ["undici-types@7.18.2", "", {}, "sha512-AsuCzffGHJybSaRrmr5eHr81mwJU3kjw6M+uprWvCXiNeN9SOGwQ3Jn8jb8m3Z6izVgknn1R0FTCEAP2QrLY/w=="],
 
@@ -2505,19 +2486,11 @@
 
     "deepagents/@langchain/langgraph-sdk/uuid": ["uuid@13.0.0", "", { "bin": { "uuid": "dist-node/bin/uuid" } }, "sha512-XQegIaBTVUjSHliKqcnFqYypAd4S+WCYt5NIeRs6w/UAry7z8Y9j5ZwRRL4kzq9U3sD6v+85er9FvkEaBpji2w=="],
 
-    "deepagents/@langchain/openai/@langchain/core": ["@langchain/core@1.1.38", "", { "dependencies": { "@cfworker/json-schema": "4.1.1", "@standard-schema/spec": "1.1.0", "ansi-styles": "5.2.0", "camelcase": "6.3.0", "decamelize": "1.2.0", "js-tiktoken": "1.0.21", "langsmith": "0.5.19", "mustache": "4.2.0", "p-queue": "6.6.2", "uuid": "11.1.0", "zod": "4.3.6" } }, "sha512-C340wH1YL10CiVOFlEpQMp0zQE85/eBLKX/gi1Lv7shAyUmR3CQ0t/mXlCd5RsZa6ntAN1kDJnp64ArWey9XAA=="],
-
-    "deepagents/@langchain/openai/openai": ["openai@6.33.0", "", { "optionalDependencies": { "ws": "8.19.0", "zod": "4.3.6" }, "bin": { "openai": "bin/cli" } }, "sha512-xAYN1W3YsDXJWA5F277135YfkEk6H7D3D6vWwRhJ3OEkzRgcyK8z/P5P9Gyi/wB4N8kK9kM5ZjprfvyHagKmpw=="],
-
     "deepagents/@types/node/undici-types": ["undici-types@7.18.2", "", {}, "sha512-AsuCzffGHJybSaRrmr5eHr81mwJU3kjw6M+uprWvCXiNeN9SOGwQ3Jn8jb8m3Z6izVgknn1R0FTCEAP2QrLY/w=="],
 
     "examples/@langchain/core/uuid": ["uuid@11.1.0", "", { "bin": { "uuid": "dist/esm/bin/uuid" } }, "sha512-0/A9rDy9P7cJ+8w1c9WD9V//9Wj15Ce2MPz8Ri6032usz+NfePxx5AcN3bN+r6ZL6jEo066/yNYB3tn4pQEx+A=="],
 
-    "examples/@langchain/openai/openai": ["openai@6.33.0", "", { "optionalDependencies": { "ws": "8.19.0", "zod": "4.3.6" }, "bin": { "openai": "bin/cli" } }, "sha512-xAYN1W3YsDXJWA5F277135YfkEk6H7D3D6vWwRhJ3OEkzRgcyK8z/P5P9Gyi/wB4N8kK9kM5ZjprfvyHagKmpw=="],
-
     "examples/@types/node/undici-types": ["undici-types@7.18.2", "", {}, "sha512-AsuCzffGHJybSaRrmr5eHr81mwJU3kjw6M+uprWvCXiNeN9SOGwQ3Jn8jb8m3Z6izVgknn1R0FTCEAP2QrLY/w=="],
-
-    "langsmith/openai/zod": ["zod@4.3.6", "", {}, "sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg=="],
 
     "log-update/slice-ansi/ansi-styles": ["ansi-styles@6.2.3", "", {}, "sha512-4Dj6M28JB+oAH8kFkTLUo+a2jwOFkuqb3yucU0CANcRRUbxS0cP0nZYCGjcc3BNXwRIsUVmDGgzawme7zvJHvg=="],
 
@@ -2599,7 +2572,11 @@
 
     "@examples/async-subagents-parallel-research/vite/@types/node/undici-types": ["undici-types@7.18.2", "", {}, "sha512-AsuCzffGHJybSaRrmr5eHr81mwJU3kjw6M+uprWvCXiNeN9SOGwQ3Jn8jb8m3Z6izVgknn1R0FTCEAP2QrLY/w=="],
 
-    "@langchain/langgraph-sdk/@langchain/core/p-queue/eventemitter3": ["eventemitter3@4.0.7", "", {}, "sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw=="],
+    "@langchain/langgraph/@langchain/langgraph-sdk/@langchain/core/p-queue": ["p-queue@6.6.2", "", { "dependencies": { "eventemitter3": "4.0.7", "p-timeout": "3.2.0" } }, "sha512-RwFpb72c/BhQLEXIZ5K2e+AhgNVmIejGlTgiB9MzZ0e93GRvqZ7uSi0dvRF7/XIXDeNkra2fNHBxTyPDGySpjQ=="],
+
+    "@langchain/langgraph/@langchain/langgraph-sdk/@langchain/core/uuid": ["uuid@11.1.0", "", { "bin": { "uuid": "dist/esm/bin/uuid" } }, "sha512-0/A9rDy9P7cJ+8w1c9WD9V//9Wj15Ce2MPz8Ri6032usz+NfePxx5AcN3bN+r6ZL6jEo066/yNYB3tn4pQEx+A=="],
+
+    "@langchain/langgraph/@langchain/langgraph-sdk/p-queue/eventemitter3": ["eventemitter3@5.0.4", "", {}, "sha512-mlsTRyGaPBjPedk6Bvw+aqbsXDtoAyAzm5MO7JgU+yVRyMQ5O8bD4Kcci7BS85f93veegeCPkL8R4GLClnjLFw=="],
 
     "@langchain/langgraph/@langchain/langgraph-sdk/p-queue/p-timeout": ["p-timeout@7.0.1", "", {}, "sha512-AxTM2wDGORHGEkPCt8yqxOTMgpfbEHqF51f/5fJCmwFC3C/zNcGT63SymH2ttOAaiIws2zVg4+izQCjrakcwHg=="],
 
@@ -2623,8 +2600,8 @@
 
     "deepagents/@langchain/langgraph-sdk/@langchain/core/uuid": ["uuid@11.1.0", "", { "bin": { "uuid": "dist/esm/bin/uuid" } }, "sha512-0/A9rDy9P7cJ+8w1c9WD9V//9Wj15Ce2MPz8Ri6032usz+NfePxx5AcN3bN+r6ZL6jEo066/yNYB3tn4pQEx+A=="],
 
-    "deepagents/@langchain/langgraph-sdk/p-queue/p-timeout": ["p-timeout@7.0.1", "", {}, "sha512-AxTM2wDGORHGEkPCt8yqxOTMgpfbEHqF51f/5fJCmwFC3C/zNcGT63SymH2ttOAaiIws2zVg4+izQCjrakcwHg=="],
+    "deepagents/@langchain/langgraph-sdk/p-queue/eventemitter3": ["eventemitter3@5.0.4", "", {}, "sha512-mlsTRyGaPBjPedk6Bvw+aqbsXDtoAyAzm5MO7JgU+yVRyMQ5O8bD4Kcci7BS85f93veegeCPkL8R4GLClnjLFw=="],
 
-    "deepagents/@langchain/langgraph-sdk/@langchain/core/p-queue/eventemitter3": ["eventemitter3@4.0.7", "", {}, "sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw=="],
+    "deepagents/@langchain/langgraph-sdk/p-queue/p-timeout": ["p-timeout@7.0.1", "", {}, "sha512-AxTM2wDGORHGEkPCt8yqxOTMgpfbEHqF51f/5fJCmwFC3C/zNcGT63SymH2ttOAaiIws2zVg4+izQCjrakcwHg=="],
   }
 }

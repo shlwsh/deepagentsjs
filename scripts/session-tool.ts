@@ -3,9 +3,7 @@
  * 支持会话总结保存和加载
  */
 
-import { logger, config } from "../packages/agent-service/src/config/index";
-import { getLocalISOTime } from "../packages/agent-service/src/utils/helpers";
-import { llm } from "../packages/agent-service/src/config/model";
+import { logger, config, getLocalISOTime, llm } from "./shim";
 import { HumanMessage } from "@langchain/core/messages";
 import * as fs from "fs";
 import * as path from "path";

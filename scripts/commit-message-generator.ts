@@ -3,8 +3,7 @@
  * 使用 LLM 分析代码变更并生成提交信息
  */
 
-import { llm } from "../packages/agent-service/src/config/model";
-import { logger } from "../packages/agent-service/src/config/index";
+import { llm, logger } from "./shim";
 import { HumanMessage } from "@langchain/core/messages";
 
 /**

@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>连接错误调试工具</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        background: #f5f5f5;
+      }
+      .container {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #333;
+        margin-bottom: 20px;
+      }
+      .instruction {
+        background: #e3f2fd;
+        padding: 15px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        border-left: 4px solid #2196f3;
+      }
+      .code-block {
+        background: #263238;
+        color: #aed581;
+        padding: 15px;
+        border-radius: 4px;
+        overflow-x: auto;
+        font-family: "Courier New", monospace;
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 10px 0;
+      }
+      .error-display {
+        background: #fff3e0;
+        padding: 15px;
+        border-radius: 4px;
+        margin-top: 20px;
+        border-left: 4px solid #ff9800;
+      }
+      .error-title {
+        font-weight: bold;
+        color: #e65100;
+        margin-bottom: 10px;
+      }
+      pre {
+        margin: 0;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+      }
+      button {
+        background: #2196f3;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+      button:hover {
+        background: #1976d2;
+      }
+      .step {
+        margin: 15px 0;
+        padding-left: 20px;
+      }
+      .step-number {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background: #2196f3;
+        color: white;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 30px;
+        margin-right: 10px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🔍 工作流连接错误调试工具</h1>
+
+      <div class="instruction">
+        <strong>使用说明：</strong>
+        <div class="step">
+          <span class="step-number">1</span>
+          打开浏览器开发者工具（F12）
+        </div>
+        <div class="step">
+          <span class="step-number">2</span>
+          切换到 Console（控制台）标签
+        </div>
+        <div class="step">
+          <span class="step-number">3</span>
+          复制下面的代码并粘贴到控制台中
+        </div>
+        <div class="step">
+          <span class="step-number">4</span>
+          按 Enter 执行
+        </div>
+        <div class="step">
+          <span class="step-number">5</span>
+          尝试连接节点到输出节点
+        </div>
+        <div class="step">
+          <span class="step-number">6</span>
+          查看控制台输出的详细错误信息
+        </div>
+      </div>
+
+      <h3>📋 调试代码（复制到控制台）：</h3>
+      <div class="code-block" id="debugCode">
+        // 工作流连接错误调试脚本 (function() { console.log('%c🔍
+        连接错误调试工具已启动', 'color: #2196f3; font-size: 16px; font-weight:
+        bold;'); // 保存原始的 console.warn 和 console.error const originalWarn
+        = console.warn; const originalError = console.error; // 拦截
+        console.warn console.warn = function(...args) { if (args[0] &&
+        args[0].includes('[WorkflowDesigner] 连接验证失败')) {
+        console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', 'color:
+        #ff9800;'); console.log('%c⚠️ 连接验证失败详情', 'color: #ff9800;
+        font-size: 14px; font-weight: bold;');
+        console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', 'color:
+        #ff9800;'); if (args[1]) { const data = args[1]; // 显示错误列表 if
+        (data.errors && Array.isArray(data.errors)) { console.log('%c📋
+        错误列表:', 'color: #f44336; font-weight: bold;');
+        data.errors.forEach((error, index) => { console.log(`%c ${index + 1}.
+        ${error.message || error}`, 'color: #f44336;'); if (error.code) {
+        console.log(`%c 错误代码: ${error.code}`, 'color: #ff9800;'); } if
+        (error.suggestion) { console.log(`%c 建议: ${error.suggestion}`, 'color:
+        #4caf50;'); } if (error.nodeId) { console.log(`%c 节点ID:
+        ${error.nodeId}`, 'color: #2196f3;'); } }); } // 显示源节点信息 if
+        (data.sourceNode) { console.log('%c\n📤 源节点信息:', 'color: #2196f3;
+        font-weight: bold;'); console.log(' ID:', data.sourceNode.id);
+        console.log(' 类型:', data.sourceNode.type); console.log(' 标签:',
+        data.sourceNode.label); console.log(' 输入端口数量:',
+        data.sourceNode.sourceInputs); console.log(' 输出端口数量:',
+        data.sourceNode.sourceOutputs); // 尝试获取完整节点数据 if
+        (window.__WORKFLOW_STORE__) { const fullNode =
+        window.__WORKFLOW_STORE__.nodes.find(n => n.id === data.sourceNode.id);
+        if (fullNode) { console.log(' 完整节点数据:', fullNode); if
+        (fullNode.data) { console.log(' 节点 data.inputs:',
+        fullNode.data.inputs); console.log(' 节点 data.outputs:',
+        fullNode.data.outputs); } } } } // 显示目标节点信息 if (data.targetNode)
+        { console.log('%c\n📥 目标节点信息:', 'color: #9c27b0; font-weight:
+        bold;'); console.log(' ID:', data.targetNode.id); console.log(' 类型:',
+        data.targetNode.type); console.log(' 标签:', data.targetNode.label);
+        console.log(' 输入端口数量:', data.targetNode.targetInputs);
+        console.log(' 输出端口数量:', data.targetNode.targetOutputs); //
+        尝试获取完整节点数据 if (window.__WORKFLOW_STORE__) { const fullNode =
+        window.__WORKFLOW_STORE__.nodes.find(n => n.id === data.targetNode.id);
+        if (fullNode) { console.log(' 完整节点数据:', fullNode); if
+        (fullNode.data) { console.log(' 节点 data.inputs:',
+        fullNode.data.inputs); console.log(' 节点 data.outputs:',
+        fullNode.data.outputs); } } } } }
+        console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n', 'color:
+        #ff9800;'); } // 调用原始方法 originalWarn.apply(console, args); }; //
+        拦截 console.error console.error = function(...args) { if (args[0] &&
+        args[0].includes('[WorkflowDesigner] 工作流 DSL 数据验证失败')) {
+        console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', 'color:
+        #f44336;'); console.log('%c❌ DSL 验证失败详情', 'color: #f44336;
+        font-size: 14px; font-weight: bold;');
+        console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', 'color:
+        #f44336;'); if (args[1] && args[1].errors) { console.log('%c📋
+        验证错误列表:', 'color: #f44336; font-weight: bold;');
+        args[1].errors.forEach((error, index) => { console.log(`%c ${index + 1}.
+        ${error.message || error}`, 'color: #f44336;'); if (error.code) {
+        console.log(`%c 错误代码: ${error.code}`, 'color: #ff9800;'); } if
+        (error.path) { console.log(`%c 路径: ${error.path}`, 'color: #2196f3;');
+        } }); } console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n',
+        'color: #f44336;'); } // 调用原始方法 originalError.apply(console,
+        args); }; // 尝试访问工作流 Store setTimeout(() => { const app =
+        document.querySelector('#app').__vueParentComponent; if (app &&
+        app.appContext && app.appContext.config &&
+        app.appContext.config.globalProperties) { const stores =
+        app.appContext.config.globalProperties.$pinia; if (stores && stores._s)
+        { const workflowStore = Array.from(stores._s.values()).find(s => s.$id
+        === 'workflow'); if (workflowStore) { window.__WORKFLOW_STORE__ =
+        workflowStore; console.log('%c✅ 已连接到工作流 Store', 'color: #4caf50;
+        font-weight: bold;'); } } } }, 1000); console.log('%c✅
+        调试工具已就绪，现在可以尝试连接节点', 'color: #4caf50; font-size: 14px;
+        font-weight: bold;');
+        console.log('%c提示：连接失败时会自动显示详细的错误信息\n', 'color:
+        #666;'); })();
+      </div>
+      <button onclick="copyCode()">📋 复制代码</button>
+
+      <div class="error-display">
+        <div class="error-title">💡 常见问题排查：</div>
+        <ul>
+          <li>
+            <strong>输出节点不能有出边</strong> - 这是正确的，输出节点是终点
+          </li>
+          <li>
+            <strong>输入节点不能有入边</strong> - 这是正确的，输入节点是起点
+          </li>
+          <li>
+            <strong>端口类型不匹配</strong> - 检查源端口和目标端口的类型是否兼容
+          </li>
+          <li><strong>循环依赖</strong> - 检查是否形成了循环连接</li>
+          <li>
+            <strong>节点数据不完整</strong> -
+            检查节点是否正确初始化了输入输出端口
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      function copyCode() {
+        const code = document.getElementById("debugCode").textContent;
+        navigator.clipboard
+          .writeText(code)
+          .then(() => {
+            alert(
+              "✅ 代码已复制到剪贴板！\n\n请切换到浏览器控制台，粘贴并按 Enter 执行。",
+            );
+          })
+          .catch((err) => {
+            alert("❌ 复制失败，请手动选择代码复制：" + err);
+          });
+      }
+    </script>
+  </body>
+</html>

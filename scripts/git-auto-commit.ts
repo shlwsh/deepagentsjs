@@ -3,7 +3,7 @@
  * 自动检测变更、生成提交信息并推送到远程仓库
  */
 
-import { logger } from "../packages/agent-service/src/config/index";
+import { logger } from "./shim";
 import {
     isGitRepository,
     getGitStatus,

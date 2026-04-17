@@ -49,21 +49,21 @@ function getDashScopeConfig(): DashScopeConfig {
  * 获取版本文件路径
  */
 function getVersionFilePath(): string {
-  return join(process.cwd(), "packages/agent-service/version.json");
+  return join(process.cwd(), "services/agent-platform/version.json");
 }
 
 /**
  * 获取版本历史文件路径
  */
 function getVersionHistoryPath(): string {
-  return join(process.cwd(), "packages/agent-service/version-history.json");
+  return join(process.cwd(), "services/agent-platform/version-history.json");
 }
 
 /**
  * 获取版本备份目录
  */
 function getVersionBackupDir(): string {
-  return join(process.cwd(), "packages/agent-service/version-backups");
+  return join(process.cwd(), "services/agent-platform/version-backups");
 }
 
 /**
@@ -417,9 +417,9 @@ AI 配置:
   - 从 .env 文件读取 DASHSCOPE_BASE_URL
 
 版本文件位置:
-  - 版本文件: packages/agent-service/version.json
-  - 历史记录: packages/agent-service/version-history.json
-  - 备份目录: packages/agent-service/version-backups/
+  - 版本文件: services/agent-platform/version.json
+  - 历史记录: services/agent-platform/version-history.json
+  - 备份目录: services/agent-platform/version-backups/
 
 版本升级规则:
   - 同日升级: 序号递增 (10.20260126.001 → 10.20260126.002)

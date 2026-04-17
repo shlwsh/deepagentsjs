@@ -6,8 +6,7 @@
 import { HumanMessage } from "@langchain/core/messages";
 import * as fs from "fs/promises";
 import * as path from "path";
-import { logger } from "../packages/agent-service/src/config/index";
-import { llm } from "../packages/agent-service/src/config/model";
+import { logger, llm } from "./shim";
 
 /**
  * 解决给定文件中的冲突
