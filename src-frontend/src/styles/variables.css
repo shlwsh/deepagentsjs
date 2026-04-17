@@ -1,0 +1,79 @@
+/* ════════════════════════════════════════════════════════════════
+   Agent 智能体平台 — CSS 变量系统
+   深色主题 + 现代玻璃形态设计
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* 背景 */
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --bg-tertiary: #1c2128;
+  --bg-elevated: #21262d;
+  --bg-overlay: rgba(13, 17, 23, 0.85);
+
+  /* 表面（Glass 效果） */
+  --surface-glass: rgba(255, 255, 255, 0.03);
+  --surface-glass-hover: rgba(255, 255, 255, 0.06);
+  --surface-glass-active: rgba(255, 255, 255, 0.08);
+
+  /* 文字 */
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --text-muted: #484f58;
+  --text-inverse: #0d1117;
+
+  /* 主色调 */
+  --accent-primary: #58a6ff;
+  --accent-primary-hover: #79c0ff;
+  --accent-secondary: #bc8cff;
+  --accent-success: #3fb950;
+  --accent-warning: #d29922;
+  --accent-danger: #f85149;
+
+  /* 渐变 */
+  --gradient-primary: linear-gradient(135deg, #58a6ff 0%, #bc8cff 100%);
+  --gradient-surface: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+
+  /* 边框 */
+  --border-default: rgba(240, 246, 252, 0.1);
+  --border-accent: rgba(88, 166, 255, 0.3);
+  --border-radius-sm: 6px;
+  --border-radius-md: 10px;
+  --border-radius-lg: 16px;
+  --border-radius-xl: 24px;
+
+  /* 阴影 */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px rgba(88, 166, 255, 0.15);
+
+  /* 字体 */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  --font-size-xs: 11px;
+  --font-size-sm: 13px;
+  --font-size-md: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 28px;
+
+  /* 间距 */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 24px;
+  --space-2xl: 32px;
+
+  /* 过渡 */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+  --transition-slow: 0.4s ease;
+
+  /* 布局 */
+  --sidebar-width: 280px;
+  --chain-panel-width: 320px;
+  --header-height: 56px;
+  --input-height: 56px;
+}

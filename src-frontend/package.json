@@ -1,0 +1,24 @@
+{
+  "name": "@deepagents/frontend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.5.0",
+    "vue-router": "^4.5.0",
+    "pinia": "^3.0.0",
+    "marked": "^15.0.0",
+    "highlight.js": "^11.11.0"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0",
+    "@vitejs/plugin-vue": "^5.2.0",
+    "typescript": "^6.0.2",
+    "vue-tsc": "^2.2.0"
+  }
+}

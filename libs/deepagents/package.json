@@ -7,7 +7,7 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "scripts": {
-    "build": "tsdown",
+    "build": "tsc",
     "clean": "rm -rf dist/ .tsdown/",
     "dev": "tsc --watch",
     "typecheck": "tsc --noEmit",

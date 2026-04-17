@@ -1,0 +1,7 @@
+version: "1.0"
+agents:
+  - id: "assistant"
+    name: "通用助手"
+    model: "dashscope/deepseek-v3"
+    systemPrompt: "你是一个热心、专业的智能助手。请用中文回答用户的问题。"
+    skills: []

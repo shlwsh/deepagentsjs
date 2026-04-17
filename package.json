@@ -5,6 +5,9 @@
   "description": "Deep Agents - a library for building controllable AI agents with LangGraph",
   "type": "module",
   "scripts": {
+    "dev": "concurrently \"bun run dev:service\" \"bun run dev:frontend\"",
+    "dev:service": "cd services/agent-platform && bun run dev",
+    "dev:frontend": "cd src-frontend && bun run dev",
     "build": "pnpm --filter \"./libs/*\" --filter \"./libs/providers/*\" build",
     "clean": "pnpm --filter \"./libs/*\" clean",
     "typecheck": "pnpm --filter \"./libs/*\" typecheck",
@@ -42,6 +45,7 @@
     "@changesets/changelog-github": "^0.6.0",
     "@changesets/cli": "^2.29.8",
     "@tsconfig/recommended": "^1.0.13",
+    "concurrently": "^9.2.1",
     "eslint-plugin-no-instanceof": "^1.0.1",
     "globals": "^17.3.0",
     "jiti": "^2.6.1",
@@ -72,6 +76,8 @@
     "internal/*",
     "evals/*",
     "examples",
-    "examples/**/*"
+    "examples/**/*",
+    "services/*",
+    "src-frontend"
   ]
 }
