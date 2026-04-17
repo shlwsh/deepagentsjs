@@ -8,14 +8,37 @@ import { spawn } from "child_process";
 import { existsSync, readdirSync, statSync, unlinkSync, mkdirSync } from "fs";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
+import { config as dotenvConfig } from "dotenv";
+
+// 加载环境变量
+dotenvConfig({ path: join(process.cwd(), "services", "agent-platform", ".env") });
+
+// 解析连接字符串
+const parseConnectionString = (connectionString?: string) => {
+  if (!connectionString) return {};
+  try {
+    const url = new URL(connectionString);
+    return {
+      host: url.hostname,
+      port: url.port,
+      user: url.username,
+      password: url.password,
+      database: url.pathname.slice(1),
+    };
+  } catch {
+    return {};
+  }
+};
+
+const connInfo = parseConnectionString(process.env.PG_CONNECTION_STRING);
 
 // 配置
 const config = {
-  host: process.env.DB_HOST || "localhost",
-  port: process.env.DB_PORT || "5432",
-  user: process.env.DB_USER || "postgres",
-  password: process.env.DB_PASSWORD || "postgres",
-  database: process.env.DB_NAME || "personnel_db",
+  host: connInfo.host || process.env.DB_HOST || "localhost",
+  port: connInfo.port || process.env.DB_PORT || "5432",
+  user: connInfo.user || process.env.DB_USER || "postgres",
+  password: connInfo.password || process.env.DB_PASSWORD || "postgres",
+  database: connInfo.database || process.env.DB_NAME || "agentdb",
 };
 
 // 获取基础备份目录

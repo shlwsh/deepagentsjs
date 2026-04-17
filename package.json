@@ -35,6 +35,7 @@
     "test:skill-flow": "bun run scripts/test-skill-creation-flow.ts",
     "verify-lsp": "bun run scripts/verify-lsp.ts",
     "backup": "bun run scripts/backup-database.ts",
+    "restore": "bun run scripts/restore-database.ts",
     "saveknowledge": "bun run scripts/save-knowledge.ts",
     "restoreknowledge": "bun run scripts/restore-knowledge.ts"
   },

@@ -100,7 +100,7 @@ function generateNewVersion(currentVersion: string): {
 
   // 获取今天的日期字符串 YYYYMMDD
   const today = new Date();
-  const year = today.getFullYear().toString().slice(2); // YY
+  const year = today.getFullYear().toString(); // YYYY
   const month = String(today.getMonth() + 1).padStart(2, "0");
   const day = String(today.getDate()).padStart(2, "0");
   const todayStr = `${year}${month}${day}`;

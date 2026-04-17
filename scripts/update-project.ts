@@ -11,7 +11,9 @@ import * as dotenv from 'dotenv';
 import * as path from 'path';
 
 // 加载环境变量
-dotenv.config({ path: path.join(__dirname, '../.env') });
+dotenv.config({ path: path.join(process.cwd(), "services", "agent-platform", ".env") });
+
+import { upgradeVersion } from "./ai-upgrade-version";
 
 interface UpdateSummary {
     summary: string;
@@ -126,53 +128,25 @@ ${diff.substring(0, 5000)}
 /**
  * 升级版本
  */
-async function upgradeVersion(description: string): Promise<void> {
+async function performUpgrade(description: string): Promise<void> {
     console.log('\n⬆️  升级版本...');
     console.log(`   描述: ${description}`);
 
     try {
-        const apiUrl = process.env.API_URL || 'http://localhost:8910';
+        const result = await upgradeVersion({ description, force: false });
 
-        // 调用版本升级 API
-        const response = await fetch(`${apiUrl}/api/version/upgrade`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                description,
-                force: false,
-            }),
-        });
-
-        if (!response.ok) {
-            throw new Error(`版本升级请求失败: ${response.statusText}`);
-        }
-
-        const result = await response.json();
-
-        if (result.status !== 'success') {
-            throw new Error(`版本升级失败: ${result.message}`);
-        }
-
-        const data = result.data;
-
-        if (!data.upgraded) {
+        if (!result.upgraded) {
             console.log('\n   ℹ️  版本未发生变化');
-            console.log(`   当前版本: ${data.oldVersion}`);
-            console.log(`   原因: ${result.message || '版本已是最新'}`);
+            console.log(`   当前版本: ${result.version}`);
             return;
         }
 
         // 升级成功
         console.log('\n🎉 版本升级成功！');
-        console.log(`   旧版本: ${data.oldVersion}`);
-        console.log(`   新版本: ${data.newVersion}`);
-        console.log(`   升级时间: ${new Date(data.timestamp).toLocaleString('zh-CN')}`);
-
-        if (data.versionInfo?.description) {
-            console.log(`   描述: ${data.versionInfo.description}`);
-        }
+        console.log(`   旧版本: ${result.oldVersion}`);
+        console.log(`   新版本: ${result.newVersion}`);
+        console.log(`   升级时间: ${new Date(result.timestamp).toLocaleString('zh-CN')}`);
+        console.log(`   描述: ${result.description}`);
 
     } catch (error: any) {
         console.error(`   ❌ 版本升级失败: ${error.message}`);
@@ -206,7 +180,7 @@ async function main() {
         const summary = await generateSummary(diff, updateInfo.summary);
 
         // 4. 升级版本
-        await upgradeVersion(summary);
+        await performUpgrade(summary);
 
         console.log('\n' + '='.repeat(60));
         console.log('✅ 项目更新完成！');

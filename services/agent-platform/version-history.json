@@ -1,0 +1,23 @@
+{
+  "versions": [
+    {
+      "version": "10.20260417.001",
+      "majorVersion": 10,
+      "date": "20260417",
+      "sequence": 1,
+      "timestamp": "2026-04-17T01:10:38.258Z",
+      "description": "<数据库备份与版本控制>，<新增PostgreSQL扩展支持(btree_gin/pg_trgm/uuid-ossp/vector)>，<优化脚本升级逻辑与版本历史记录>"
+    },
+    {
+      "version": "10.260417.001",
+      "majorVersion": 10,
+      "date": "260417",
+      "sequence": 1,
+      "timestamp": "2026-04-17T01:05:03.266Z",
+      "description": "测试快捷命令修复 - 2"
+    }
+  ],
+  "currentVersion": "10.20260417.001",
+  "lastUpdated": "2026-04-17T01:10:38.258Z",
+  "totalCount": 2
+}
